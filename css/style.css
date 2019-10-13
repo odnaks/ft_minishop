@@ -108,7 +108,9 @@ input{
     font-family: 'Press Start 2P', cursive;
 
 }
-
+input:focus{
+    
+}
 .login {
     color: #f8e3c4;
     font-size: 20px;

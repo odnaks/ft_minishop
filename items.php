@@ -105,6 +105,25 @@
                 echo "<br /><br /><br />";
             }
         }
+        if ($_GET['cat'] == "pink")
+        {
+            if ($set['Name'] == "pink_small")
+            {
+                echo "<b class='title_item'>". $set['Name'] . "</b><br/>";
+                echo "<img src ='https://github.com/foggliar/hello-world/blob/master/circle_s_2.png?raw=true' width='100'/>";
+                echo "<br />";
+                echo "<input type='submit' name='but_item' value='". $set['Name'] . "'>";
+                echo "<br /><br /><br />";
+            }
+            if ($set['Name'] == "pink_big")
+            {
+                echo "<b class='title_item'>". $set['Name'] . "</b><br/>";
+                echo "<img src ='https://github.com/foggliar/hello-world/blob/master/circle_2.png?raw=true' width='100'/>";
+                echo "<br />";
+                echo "<input type='submit' name='but_item' value='". $set['Name'] . "'>";
+                echo "<br /><br /><br />";
+            }
+        }
         //. " " . $set['Price'] . "</b>";
         
     }
