@@ -35,7 +35,7 @@ require('header.php');
 ?>
 
     <div class="body">
-            А это вход!
+            
             <h1>
             <?php
                 echo $err;
@@ -43,8 +43,8 @@ require('header.php');
             </h1>
             <center>
             <form active="log_in.php" methon="GET">
-                login: <input type="text" name="login" value=""><br />
-                pass: <input type="text" name="pass" value=""><br />
+                <b class="login">login: </b><input class="text" type="text" name="login" value=""><br />
+                <b class="login">pass: </b><input type="text" name="pass" value=""><br />
                 <input type="submit" name="submit" value="OK"><br />
             </form>
             </center>

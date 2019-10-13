@@ -1,3 +1,6 @@
+<?php
+include ("install.php");
+?>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">

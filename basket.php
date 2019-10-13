@@ -1,14 +1,15 @@
 <?php
 
     // session_start();
-    include ("install.php");
+    //include ("install.php");
 
     $res = mysqli_query (  $link , "SELECT * FROM basket;"  );
 
     //echo "<form active='items.php' method='POST'>";
+    echo "<b class='title_item'> Корзина: </b><br /><br /><br />";
     while ($set = mysqli_fetch_assoc($res))
     {
-        echo "<b>". $set['ItemName'] . " " . $set['Count'] . "</b><br />";
+        echo "<b class='title_item'>". $set['ItemName'] . " " . $set['Count'] . "</b><br /><br />";
         //echo "<input type='submit' name='but_item' value='". $set['Name'] . "'>";
         
     }
