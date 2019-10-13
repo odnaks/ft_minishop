@@ -1,10 +1,10 @@
 <?php
 
-session_start();
 $host = '127.0.0.1';
 $database = 'ft_minishop';
 $user = 'root';
 $pass = 'root';
+session_start();
 
 $link = mysqli_connect($host, $user, $pass, $database);
 if (mysqli_connect_errno()){

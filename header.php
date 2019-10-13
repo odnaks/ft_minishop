@@ -4,11 +4,11 @@
 </head>
 <body>
 <div class="header">
-        <a href ="index.php">
             <div class="title">
-                КРУЖКИ
+                <a href ="index.php">
+                    КРУЖКИ
+                    </a>
             </div>
-        </a>
         <div class="menu">
             <a href="basket_page.php">Basket </a>
             <a href="log_in.php">LogIn </a>
