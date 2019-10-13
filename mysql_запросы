@@ -1,0 +1,31 @@
+CREATE TABLE User (
+    Login   VARCHAR(30) PRIMARY KEY,
+    Pass    VARCHAR(130)
+);
+
+CREATE TABLE Category (
+    Name   VARCHAR(30) PRIMARY KEY
+);
+
+CREATE TABLE Item (
+    Name    VARCHAR(30) PRIMARY KEY,
+    Price   INT
+);
+
+CREATE TABLE Item_Cat (
+    ItemName    VARCHAR(30),
+    FOREIGN KEY (ItemName)  REFERENCES Item (Name),
+    CatName    VARCHAR(30),
+    FOREIGN KEY (CatName)  REFERENCES Category (Name)
+);
+
+CREATE TABLE Basket (
+    LoginName    VARCHAR(30),
+    FOREIGN KEY (LoginName)  REFERENCES User (Login),
+    ItemName        VARCHAR(30),
+    FOREIGN KEY (ItemName)  REFERENCES Item (Name),
+    Count   INT,
+    Buy INT
+);
+
+//ALTER TABLE Item ADD PRIMARY KEY (Name);

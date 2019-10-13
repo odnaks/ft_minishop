@@ -2,37 +2,69 @@
 {
     user
     {
-        login
-        pass
+        login   VARCHAR(30)
+        pass    VARCHAR(MNOGO)
     }
     category
     {
-        name
+        name    VARCHAR(30)
     }
     items
     {
-        name
-        $
+        name    VARCHAR(30)
+        $       INT
     }
     cat-items
     {
-        cat
-        item
+        cat     PRIMARY KEY(category)
+        item    PRIMARY KEY(item)
     }
     basket
     {
-        login
-        item
-        count
+        login   PRIMARY KEY(user),
+        item    PRIMARY KEY(item),
+        count   INT
+        order   BOOL
     }
-    orders ? (same basket)
-    {
-        login
-        item
-        count
-        $ ?                  
-    }
+    //orders ? (same basket)
+    //{
+    //    login   PRIMARY KEY(user)
+    //    item    PRIMARY KEY(item)
+    //    count
+    //    $ ?
+    //}
 }
+CREATE TABLE User (
+    Login   VARCHAR(30) PRIMARY KEY,
+    Pass    VARCHAR(130)
+);
+
+CREATE TABLE Category (
+    Name   VARCHAR(30) PRIMARY KEY
+);
+
+CREATE TABLE Item (
+    Name    VARCHAR(30) PRIMARY KEY,
+    Price   INT
+);
+
+CREATE TABLE Item_Cat (
+    ItemName    VARCHAR(30),
+    FOREIGN KEY (ItemName)  REFERENCES Item (Name),
+    CatName    VARCHAR(30),
+    FOREIGN KEY (CatName)  REFERENCES Category (Name)
+);
+
+CREATE TABLE Basket (
+    LoginName    VARCHAR(30),
+    FOREIGN KEY (LoginName)  REFERENCES User (Login),
+    ItemName        VARCHAR(30),
+    FOREIGN KEY (ItemName)  REFERENCES Item (Name),
+    Count   INT,
+    Buy INT
+);
+
+//ALTER TABLE Item ADD PRIMARY KEY (Name);
 
 ❌ADMIN
 {
