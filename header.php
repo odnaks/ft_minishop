@@ -10,8 +10,8 @@
             </div>
         </a>
         <div class="menu">
-            <a href="">Basket</a>
-            <a href="log_in.php">Log in</a>
+            <a href="">Basket </a>
+            <a href="log_in.php">LogIn </a>
             <a href="registration.php">Registration</a>
         </div>
 </div>
