@@ -1,0 +1,52 @@
+.body {
+    position: absolute;
+    top: 100px;
+    height: 1000px;
+    background: #0b0630;
+    color: white;
+    width: 100%;
+}
+body {
+    margin: 0;
+}
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%; 
+    height: 100px;
+    background: #06031a;
+    color: #89f6f9;
+}
+.header a {
+    color: #cc3495;
+}
+.title {
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    font-size: 40px;
+    /* тут шрифт */
+    font-family: 'Press Start 2P', cursive;
+}
+.menu {
+    font-family: 'Press Start 2P', cursive;
+    /* font-size: 10px; */
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+}
+.menu a{
+    color: #89f6f9;
+    font-size: 15px;
+    /* top: 40%; */
+}
+
+.cat {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 300px;
+    height: 600px;
+    background: #ff0000;
+}

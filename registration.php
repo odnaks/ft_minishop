@@ -1,5 +1,4 @@
 <?
-
     include ("install.php");
     if ($_GET['submit'] == "OK")
     {
@@ -9,16 +8,18 @@
             $login = $_GET['login'];
             $pass = $_GET['pass'];
             $res = mysqli_query (  $link , "SELECT Pass FROM user WHERE Login LIKE '" . $login ."';"  );
-            if (mysqli_num_rows($res) == 1)
+            if (mysqli_num_rows($res) == 0)
             {
-                $pass_sql = mysqli_fetch_row( $res );
-                if ($pass_sql[0] == $pass)
-                    header("Location: index.php");
-                else
-                    $err = "Неверный пароль";
+                mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
+                // $pass_sql = mysqli_fetch_row( $res );
+                // if ($pass_sql[0] == $pass)
+                header("Location: index.php");
+                // else
+                //     $err = "Неверный пароль";
+
             }
             else
-                $err = "Пользователя не существует";
+                $err = "Пользователь с таким логином существует";
             // mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
             // $result  = mysqli_query ($link , "SELECT * FROM user;" );
     
@@ -31,9 +32,8 @@
 <?php
 require('header.php');
 ?>
-
     <div class="body">
-            А это вход!
+            А это регистрация!
             <h1>
             <?php
                 echo $err;
