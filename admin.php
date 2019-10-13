@@ -4,19 +4,21 @@ if($_POST['submititem'] == "ADD") {
 	if ($_POST['item'] != "" && $_POST['price'] != "") {
 		$item = $_POST['item'];
 		$price = $_POST['price'];
-		$res = mysqli_query($link, "SELECT Price FROM item where Name LIKE '".$item."';");
+		$res = mysqli_query($link, "SELECT Name FROM item where Name LIKE '".$item."';");
 		if (mysqli_num_rows($res) == 0) {
 			mysqli_query($link, "INSERT INTO item VALUES ('".$item."', '".$price."');");
 		} else
-			mysqli_query($link, "UPDATE item SET NAME='".$item."', Price='".$price."' WHERE id='".mysqli_num_rows($res)."';");
+			mysqli_query($link, "UPDATE item SET Price='".$price."' WHERE Name='".$item."';");
 	}
-} else if ($_POST['delitem'] == "DELETE")
+} else if ($_POST['delitem'] == "DELETE") {
 	if ($_POST['item'] != "") {
 		$item = $_POST['item'];
 		$res = mysqli_query($link, "SELECT Name FROM item where Name LIKE '".$item."';");
 		if (mysqli_num_rows($res) != 0)
 			mysqli_query($link, "DELETE FROM item WHERE Name='".$item."';");
 	}
+}
+
 ?>
 
 <html>
