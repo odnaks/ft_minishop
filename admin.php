@@ -25,7 +25,7 @@ require('header.php');
 	 </form>
 	 </div>
 	 <div class="cat">
-	 <from action="admin.php" method="POST">
+	 <form action="admin.php" method="POST">
 	 </form>
 	 category
 	 </div>

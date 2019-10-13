@@ -1,6 +1,6 @@
 <?php
 
-    // session_start();
+    //session_start();
     include ("install.php");
 
     $res = mysqli_query (  $link , "SELECT * FROM item;"  );

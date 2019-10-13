@@ -56,3 +56,13 @@ body {
     height: 600px;
     background: #ff0000;
 }
+
+.basket {
+    position: absolute;
+    left:5%;
+    top: 20%;
+    height: 1000px;
+    background: #0b0630;
+    color: white;
+    width: 90%;
+}
