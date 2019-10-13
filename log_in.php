@@ -1,9 +1,17 @@
 <?
+
+    include ("install.php");
     if ($_GET['submit'] == "OK")
     {
         if ($_GET['login'] != "" && $_GET['pass'] != "")
+        {
             // echo "OK";
-            header("Location: newpage.php");
+            mysqli_query ($link , "INSERT INTO User VALUES( $login . "," . $pass);" );
+            $login = $_GET['login'];
+            $pass = $_GET['pass'];
+            if (mysqli_query ($link , "INSERT INTO User VALUES(" . $login . "," . $pass . ");" ))
+                header("Location: index.php");
+        }
     }
 // require('install.php');
 

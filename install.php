@@ -12,7 +12,7 @@ if (mysqli_connect_errno()){
 }
 // else
 //     echo "OK!\n";
-mysqli_query($link, "CREATE TABLE test2 (a VARCHAR(100) )");
+mysqli_query($link, "CREATE TABLE test3 (a VARCHAR(100) )");
 
 //https://www.php.net/manual/ru/book.mysqli.php
 //https://www.php.net/manual/ru/mysqli-stmt.prepare.php
