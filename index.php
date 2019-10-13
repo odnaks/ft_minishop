@@ -10,7 +10,7 @@ require('install.php');
             position: absolute;
             top: 100px;
             height: 1000px;
-            background: #000000;
+            background: #0b0630;
             color: white;
             width: 100%;
         }
