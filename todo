@@ -1,0 +1,102 @@
+❌DATA
+{
+    user
+    {
+        login
+        pass
+    }
+    category
+    {
+        name
+    }
+    items
+    {
+        name
+        $
+    }
+    cat-items
+    {
+        cat
+        item
+    }
+    basket
+    {
+        login
+        item
+        count
+    }
+    orders ? (same basket)
+    {
+        login
+        item
+        count
+        $ ?                  
+    }
+}
+
+❌ADMIN
+{
+    del/create/edit
+    {
+        category;
+        items;
+        orders;
+        ...
+    }
+}
+
+❌USER
+{
+    ❌log in (OK)==> homepage
+    {
+        login
+        pass
+    }
+    ❌reg
+    {
+        login
+        pass
+
+        age?
+        photo?
+        ..?
+    }
+    ❌edit prifile?
+    {
+        modif pass
+        {
+            login
+            old pass
+            new pass
+        }
+        delete  profile
+    }
+    ❌log out
+}
+
+❌BASKET
+{
+    total cost
+    delete item
+    mv to order
+}
+
+❌PAGES 
+{
+    homepage
+    {
+        log in
+        create acc
+        basket
+        
+        few imems
+    }
+    all items
+    ❌ADMIN
+    basket
+    user profile
+    log in 
+    reg
+}
+
+✅
