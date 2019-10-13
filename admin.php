@@ -1,14 +1,16 @@
 <?php
 include ("install.php");
-if($_POST['submit'] == "OK") {
-	if ($_POST['newitem'] != "" && $_POST['price'] != "") {
+if($_POST['submititem'] == "OK") {
+	if ($_POST['item'] != "" && $_POST['price'] != "") {
 		$item = $_POST['item'];
 		$price = $_POST['price'];
 		$res = mysqli_query($link, "SELECT Price FROM item where Name LIKE '".$item."';");
-		if (mysqli_num_rows($res) == 0)
-			mysqli_query($link, "INSERT INTO item VALUES('".$item."', '".$price."');");
-		else
-			mysqli_query($link, "UPDATE item SET NAME = '".$item."', Price = '".$price."' WHERE id='".mysqli_num_rows($res)."';");
+		mysqli_query($link, "INSERT INTO item VALUES ('".$item."', '".$price."');");
+
+		if (mysqli_num_rows($res) == 0) {
+			echo "lol\n";
+		} else
+			mysqli_query($link, "UPDATE item SET NAME='".$item."', Price='".$price."' WHERE id='".mysqli_num_rows($res)."';");
 	}
 }
 ?>
