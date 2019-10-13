@@ -6,14 +6,17 @@
         if ($_GET['login'] != "" && $_GET['pass'] != "")
         {
             // echo "OK";
-            mysqli_query ($link , "INSERT INTO User VALUES( $login . "," . $pass);" );
             $login = $_GET['login'];
             $pass = $_GET['pass'];
-            if (mysqli_query ($link , "INSERT INTO User VALUES(" . $login . "," . $pass . ");" ))
-                header("Location: index.php");
+            mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
+
+            $result  = mysqli_query ($link , "SELECT * FROM user;" );
+            echo "<h1>" . mysqli_num_fields ($str) . "</h1>";
+            echo mysqli_num_fields ($result);
+            // if (mysqli_query ($link , "INSERT INTO User VALUES(" . $login . "," . $pass . ");" ));
+            //     header("Location: index.php");
         }
     }
-// require('install.php');
 
 ?>
 <html>
@@ -75,6 +78,9 @@
     </div>
     <div class="body">
             А это вход!
+            <?php
+                echo mysqli_num_rows ($result);
+            ?>
             <center>
             <form active="log_in.php" methon="GET">
                 login: <input type="text" name="login" value=""><br />
