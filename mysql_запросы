@@ -29,3 +29,6 @@ CREATE TABLE Basket (
 );
 
 //ALTER TABLE Item ADD PRIMARY KEY (Name);
+
+
+INSERT INTO user VALUES(100, 'Thomas', 'Sales', 5000);

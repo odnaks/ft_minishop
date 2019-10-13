@@ -1,11 +1,16 @@
-<?php
-
-require('install.php');
+<?
+    if ($_GET['submit'] == "OK")
+    {
+        if ($_GET['login'] != "" && $_GET['pass'] != "")
+            // echo "OK";
+            header("Location: newpage.php");
+    }
+// require('install.php');
 
 ?>
 <html>
 <head>
-    <style>
+<style>
         .body {
             position: absolute;
             top: 100px;
@@ -52,16 +57,23 @@ require('install.php');
         <a href ="index.php">
             <div class="title">
                 == КРУЖКИ ==
-        </div>
+            </div>
         </a>
         <div class="menu">
             <a href="">Basket</a>
-            <a href="log_in.php">Log in</a>
+            <a href="">Log in</a>
             <a href="">Registration</a>
         </div>
     </div>
     <div class="body">
-            Здесь будут товары. и услуги. то есть кружки и кружки. кружкИ и крУжки....
+            А это вход!
+            <center>
+            <form active="log_in.php" methon="GET">
+                login: <input type="text" name="login" value=""><br />
+                pass: <input type="text" name="pass" value=""><br />
+                <input type="submit" name="submit" value="OK"><br />
+            </form>
+            </center>
     </div>
 </body>
 </html>
