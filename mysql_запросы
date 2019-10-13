@@ -1,4 +1,32 @@
 CREATE TABLE User (
+    Login   VARCHAR(30),
+    Pass    VARCHAR(130)
+);
+
+CREATE TABLE Category (
+    Name   VARCHAR(30)
+);
+
+CREATE TABLE Item (
+    Name    VARCHAR(30),
+    Price   INT
+);
+
+CREATE TABLE Item_Cat (
+    ItemName    VARCHAR(30),
+    CatName    VARCHAR(30)
+);
+
+CREATE TABLE Basket (
+    LoginName    VARCHAR(30),
+    ItemName        VARCHAR(30),
+    Count   INT,
+    Buy INT
+);
+
+
+============================
+CREATE TABLE User (
     Login   VARCHAR(30) PRIMARY KEY,
     Pass    VARCHAR(130)
 );

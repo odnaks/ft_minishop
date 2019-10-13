@@ -1,5 +1,4 @@
 <?
-
     include ("install.php");
     if ($_GET['submit'] == "OK")
     {
@@ -13,7 +12,10 @@
             {
                 $pass_sql = mysqli_fetch_row( $res );
                 if ($pass_sql[0] == $pass)
+                {
+                    $_SESSION['login'] = $login;
                     header("Location: index.php");
+                }
                 else
                     $err = "Неверный пароль";
             }
