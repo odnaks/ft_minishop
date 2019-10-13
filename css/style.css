@@ -5,20 +5,33 @@
     background: #06031a;
     color: white;
     width: 65%;
-    border: 4px solid;
-    border-color: #cc3495;
+    border: 3px solid;
+    border-color: #f8e3c4;
 }
 body {
-    background: #0b0630;
+    background: #06031a;
     margin: 0;
+}
+.body_log{
+    position: absolute;
+    left:5%;
+    top: 20%;
+    background: #06031a;
+    color: white;
+    width: 90%;
+    border: 3px solid;
+    border-color: #cc3495;
 }
 .header {
     position: absolute;
     top: 0;
     width: 100%; 
     height: 100px;
-    background: #06031a;
+    background: #0b0630;;
     color: #89f6f9;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    border-color: #cc3495;
 }
 .header a {
     color: #cc3495;
@@ -63,14 +76,14 @@ body {
     left: 5%;
     width: 300px;
     height: 600px;
-    border: 4px solid;
-    border-color: #cc3495;
-    background: #06031a;
+    border: 3px solid;
+    border-color: #f8e3c4;
+    background: z;
 }
 
 .text_cat{
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 14%;
 }
 
 .basket {
@@ -86,12 +99,7 @@ body {
 .title_item {
     margin-top: 5%;
     font-family: 'Press Start 2P', cursive;
-    size: 20;   
     color: #f8e3c4;
-}
-
-.title_item a{
-    text-decoration: none;   
 }
 
 .title_item a:hover{
@@ -109,7 +117,7 @@ input{
 
 }
 input:focus{
-    
+    border:2px solid #cc3495;
 }
 .login {
     color: #f8e3c4;
@@ -117,9 +125,21 @@ input:focus{
     font-family: 'Press Start 2P', cursive;   
 }
 
-a .title_item {
+.title_item a{
     font-family: 'Press Start 2P', cursive;
     size: 20;   
+    color: #cc3495;
+    text-decoration: none;
+}
+
+.title_item a:hover{
+    text-decoration: none;
     color: #f8e3c4;
 }
 
+.title_cat {
+    margin-top: 5%;
+    font-family: 'Press Start 2P', cursive;
+    color: #f8e3c4;
+    font-size: 22px;
+}

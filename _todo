@@ -1,0 +1,66 @@
+❌ADMIN
+{
+    ❌del/create/edit
+    {
+        ❌category;
+        ✅items;
+        ❌orders;
+        ...
+    }
+}
+
+❌USER
+{
+    ✅log in (OK)==> homepage
+    {
+        ✅login
+        ✅pass
+    }
+    ✅reg
+    {
+        ✅login
+        ✅pass
+
+        age?
+        photo?
+        ..?
+    }
+    ❌edit prifile?
+    {
+        modif pass
+        {
+            login
+            old pass
+            new pass
+        }
+        delete  profile
+    }
+    ❌log out
+}
+
+❌BASKET
+{
+    ✅items
+    ❌total cost
+    ❌delete item
+    ❌mv to order
+}
+
+❌PAGES 
+{
+    ✅homepage
+    {
+        ✅log in
+        ✅create acc
+        ✅basket
+        
+        ✅few imems
+    }
+    ✅ADMIN
+    ✅basket
+    ❌user profile
+    ✅log in 
+    ✅reg
+}
+
+✅

@@ -25,7 +25,7 @@ if($_POST['submititem'] == "ADD") {
 <?php
 require('header.php');
 ?>
-	<div class="body">
+	<div class="body_log">
 	 <form action="admin.php" method="POST">
  		Item<input type="text" name="item" value=""><br />
 	 	Price<input type="text" name="price" value=""><br />
@@ -33,11 +33,10 @@ require('header.php');
 		<input type="submit" name="delitem" value="DELETE"><br />
 	 </form>
 	 </div>
-	 <div class="cat">
+	 <!-- <div class="cat">
 	 <form action="admin.php" method="POST">
 	 </form>
 	 category
-	 </div>
+	 </div> -->
 	</body>
 </html>
-

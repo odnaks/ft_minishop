@@ -16,13 +16,11 @@
                 header("Location: index.php");
                 // else
                 //     $err = "Неверный пароль";
-
             }
             else
                 $err = "Пользователь с таким логином существует";
             // mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
             // $result  = mysqli_query ($link , "SELECT * FROM user;" );
-    
         }
     }
 
@@ -32,7 +30,7 @@
 <?php
 require('header.php');
 ?>
-    <div class="body">
+    <div class="body_log">
             
             <h1>
             <?php
@@ -41,8 +39,8 @@ require('header.php');
             </h1>
             <center>
             <form active="log_in.php" methon="GET">
-            <b class="login">login: </b> <input type="text" name="login" value=""><br />
-            <b class="login">pass: </b> <input type="text" name="pass" value=""><br />
+                <b class="login">login: </b> <input type="text" name="login" value=""><br />
+                <b class="login">pass: </b> <input type="text" name="pass" value=""><br />
                 <input type="submit" name="submit" value="OK"><br />
             </form>
             </center>

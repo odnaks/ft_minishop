@@ -34,7 +34,7 @@
 require('header.php');
 ?>
 
-    <div class="body">
+    <div class="body_log">
             
             <h1>
             <?php

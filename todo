@@ -1,103 +1,50 @@
-❌DATA
+❌REGA
 {
-    user
-    {
-        login   VARCHAR(30)
-        pass    VARCHAR(MNOGO)
-    }
-    category
-    {
-        name    VARCHAR(30)
-    }
-    items
-    {
-        name    VARCHAR(30)
-        $       INT
-    }
-    cat-items
-    {
-        cat     PRIMARY KEY(category)
-        item    PRIMARY KEY(item)
-    }
-    basket
-    {
-        login   PRIMARY KEY(user),
-        item    PRIMARY KEY(item),
-        count   INT
-        order   BOOL
-    }
-    //orders ? (same basket)
-    //{
-    //    login   PRIMARY KEY(user)
-    //    item    PRIMARY KEY(item)
-    //    count
-    //    $ ?
-    //}
+    ❌Location: LogIn
+    ❌Error
+    ❌title
+    ❌hide pass
+    ❌emain
+    ❌hash
+
+    ❌color
+    ❌mood (3)
 }
 
-❌ADMIN
+❌PROFILE
 {
-    del/create/edit
-    {
-        category;
-        items;
-        orders;
-        ...
-    }
-}
+    ❌orders
+    ❌photo
 
-❌USER
-{
-    ❌log in (OK)==> homepage
-    {
-        login
-        pass
-    }
-    ❌reg
-    {
-        login
-        pass
-
-        age?
-        photo?
-        ..?
-    }
-    ❌edit prifile?
-    {
-        modif pass
-        {
-            login
-            old pass
-            new pass
-        }
-        delete  profile
-    }
-    ❌log out
+    ✏️edit
 }
 
 ❌BASKET
 {
-    total cost
-    delete item
-    mv to order
+    ❌total price
+
+    ❌price
+    ❌count
+    ❌img
+    ❌del
+    ❌edit
+    ❌to order
+
+    ✏️img basket
 }
 
-❌PAGES 
+❌BASKET
 {
-    homepage
-    {
-        log in
-        create acc
-        basket
-        
-        few imems
-    }
-    all items
-    ❌ADMIN
-    basket
-    user profile
-    log in 
-    reg
+    ❌total price
+
+    ❌price
+    ❌count
+    ❌img
 }
 
-✅
+❌LOG IN
+{
+    ❌menu: profile and basket
+    ❌title
+    ❌error
+}

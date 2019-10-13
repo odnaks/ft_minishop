@@ -7,12 +7,12 @@
     //session_start();
     // include ("install.php");
 
-    echo "<b class='title_item'> Категории: </b><br/><br/><br/><br/>";
+    echo "<b class='title_cat'> КАТЕГОРИИ: </b><br/><br/><br/><br/>";
     $res = mysqli_query (  $link , "SELECT * FROM category;" );
 
     while ($set = mysqli_fetch_assoc($res))
     {
-        echo "<div class='title_item'><a href='index.php?cat=". $set['Name'] ."'> <b class='title_item'>". $set['Name'] . "</b><br/><br/></a></div>";
+        echo "<div class='title_item'><a href='index.php?cat=". $set['Name'] ."'> ". $set['Name'] . "<br/><br/></a></div>";
     }
     
 
