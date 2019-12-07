@@ -25,7 +25,7 @@ body {
 .header {
     position: absolute;
     top: 0;
-    width: 100%; 
+    width: 100%;
     height: 100px;
     background: #0b0630;;
     color: #89f6f9;
@@ -36,8 +36,15 @@ body {
 .header a {
     color: #cc3495;
 }
+
+@media screen and (max-width: 1100px) {
+    .header a {
+        display: flex;
+    }
+}
+
+
 .title {
-    width: 40%;
     position: absolute;
     bottom: 30%;
     left: 40%;
@@ -47,10 +54,12 @@ body {
 }
 
 .title a{
+    display: block;
+    margin:auto;
     text-decoration: none;
 }
 .title a:hover{
-    color: #f8e3c4;    
+    color: #f8e3c4;
 }
 .menu {
     font-family: 'Press Start 2P', cursive;
@@ -71,10 +80,10 @@ body {
 }
 
 .cat {
-    position: absolute; 
+    position: absolute;
     top: 20%;
     left: 5%;
-    width: 300px;
+    width: 24vw;
     height: 600px;
     border: 3px solid;
     border-color: #f8e3c4;
@@ -97,18 +106,19 @@ body {
 }
 
 .title_item {
-    margin-top: 5%;
+    margin-top:  5% ;
     font-family: 'Press Start 2P', cursive;
     color: #f8e3c4;
+    display: block;
 }
 
 .title_item a:hover{
     text-decoration: none;
-    color: #cc3495;   
+    color: #cc3495;
 }
 input{
     border: 2 px solid #cc3495;
-    background: #06031a; 
+    background: #06031a;
     height: 30px;
     width: 150px;
     color: #f8e3c4;
@@ -122,12 +132,12 @@ input:focus{
 .login {
     color: #f8e3c4;
     font-size: 20px;
-    font-family: 'Press Start 2P', cursive;   
+    font-family: 'Press Start 2P', cursive;
 }
 
 .title_item a{
     font-family: 'Press Start 2P', cursive;
-    size: 20;   
+    size: 20;
     color: #cc3495;
     text-decoration: none;
 }
@@ -142,4 +152,23 @@ input:focus{
     font-family: 'Press Start 2P', cursive;
     color: #f8e3c4;
     font-size: 22px;
+}
+
+
+
+.items-container{
+    width: 60vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 4%;
+}
+
+.item img{
+    width: 70%;;
+}
+
+.item{
+    width: 40%;
+    padding-bottom: 10px;
 }

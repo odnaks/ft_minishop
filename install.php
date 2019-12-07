@@ -8,12 +8,13 @@ session_start();
 
 $link = mysqli_connect($host, $user, $pass, $database);
 if (mysqli_connect_errno()){
-    echo "Error\n";
+    echo "error: " . mysqli_connect_error();
     exit();
 }
+
 // else
 //     echo "OK!\n";
-mysqli_query($link, "CREATE TABLE test3 (a VARCHAR(100) )");
+mysqli_query($link, file_get_contents('init_db.sql'));
 
 //https://www.php.net/manual/ru/book.mysqli.php
 //https://www.php.net/manual/ru/mysqli-stmt.prepare.php

@@ -12,8 +12,8 @@
 
     while ($set = mysqli_fetch_assoc($res))
     {
-        echo "<div class='title_item'><a href='index.php?cat=". $set['Name'] ."'> ". $set['Name'] . "<br/><br/></a></div>";
+        echo "<div class='title_item'><a href='index.php?cat=". $set['Id'] ."'> ". $set['Name'] . "<br/><br/></a></div>";
     }
-    
+
 
 ?>

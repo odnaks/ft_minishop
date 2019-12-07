@@ -40,26 +40,16 @@
 
 ❌BASKET
 {
-    ✅items
-    ❌total cost
-    ❌delete item
-    ❌mv to order
-}
-
-❌PAGES 
-{
-    ✅homepage
-    {
         ✅log in
         ✅create acc
         ✅basket
-        
+
         ✅few imems
     }
     ✅ADMIN
     ✅basket
     ❌user profile
-    ✅log in 
+    ✅log in
     ✅reg
 }
 
