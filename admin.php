@@ -119,7 +119,8 @@ require('header.php');
 
 	
 	<center>
-	<a href='admin_order.php'><h3>Orders</h3></a>
+	<!-- <a href='admin_order.php'><h3>Orders</h3></a> -->
+
 	 <form action="admin.php" method="POST">
 	 <br>
 	 	Item: <br><br>
