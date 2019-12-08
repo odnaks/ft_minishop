@@ -13,10 +13,10 @@ include ("install.php");
                     </a>
             </div>
         <div class="menu">
-
+        <a href='basket_page.php'>Basket&emsp;&emsp;</a>
             <?=
                 ($_SESSION['login']) ?
-                    "<a href='basket_page.php'>Basket&emsp;&emsp;</a><a href='log_out.php'>LogOut&#160;$current_login</a>" :
+                    "<a href='log_out.php'>LogOut&#160;$current_login</a>" :
                     "<a href='log_in.php'>LogIn </a><a href='registration.php'>Registration</a>";
             ?>
         </div>

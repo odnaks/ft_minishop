@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS BasketItem (
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserId    INT,
+    FOREIGN KEY (UserId)  REFERENCES User (Id),
+    ItemId        INT,
+    FOREIGN KEY (ItemId)  REFERENCES Item (Id),
+    Buy TINYINT DEFAULT (1)    
+);

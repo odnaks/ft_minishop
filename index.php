@@ -3,8 +3,9 @@ require('install.php');
 
 if(isset($_POST['id']))
 {
+    $id = $_POST['id'];
     if($_SESSION['login']){
-        $id = $_POST['id'];
+        
         $loginid = $_SESSION['login'];
         $buys = mysqli_query($link , "SELECT buy FROM basketitem WHERE userid='$loginid' AND itemid='$id';");
         if(mysqli_num_rows($buys)){
@@ -15,14 +16,15 @@ if(isset($_POST['id']))
         }
         echo "added to cart! ";
     } else {
-        header('Location: log_in.php');
-        /*if(!$_SESSION['basket'])
+        //header('Location: log_in.php');
+
+        if(!$_SESSION['basket'])
             $_SESSION['basket'] = [];
-        $f = false;
-        foreach ($$_SESSION[basket] as $value) {
-            if($value)
-        }
-        $_SESSION['basket'[] = ['ItemId' => $_POST['id'], 'Buy' => 1];*/
+
+        if(array_key_exists($id, $_SESSION['basket']))
+            $_SESSION['basket'][$id]++;
+        else
+            $_SESSION['basket'][$id] = 1;
     }
 }
 ?>

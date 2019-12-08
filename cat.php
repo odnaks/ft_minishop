@@ -14,6 +14,4 @@
     {
         echo "<div class='title_item'><a href='index.php?cat=". $set['Id'] ."'> ". $set['Name'] . "<br/><br/></a></div>";
     }
-
-
 ?>

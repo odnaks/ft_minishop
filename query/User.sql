@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS User (
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Login   VARCHAR(30),
+    Password    VARCHAR(200),
+    AvatarId INT,
+    FOREIGN KEY (AvatarId)  REFERENCES Avatar (Id)
+);

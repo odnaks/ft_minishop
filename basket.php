@@ -1,20 +1,24 @@
 <?php
     include ("install.php");
-
-    $res = mysqli_query ($link , "select * from basketitem inner join item on basketitem.itemid = item.id where userid = {$_SESSION['login']};"  );
+    if($_SESSION['login']){
+        $res = mysqli_query ($link , "SELECT * FROM basketitem INNER JOIN item ON basketitem.itemid = item.id WHERE userid = {$_SESSION['login']};"  );
+    } else {
+        $itemslist = implode("' OR id = '", array_keys($_SESSION['basket']));
+        $res = mysqli_query ($link , "SELECT * FROM item WHERE id = '$itemslist'");
+    }
+    
 ?>
     <form class='basket' action='basket_page.php' method='POST'>
     <b class='title_item'> Корзина: </b><br /><br /><br />
-
-
-
-
 <?
     while ($item = mysqli_fetch_assoc($res))
     {
+        if(!$_SESSION['login']){
+            $item['Buy'] = $_SESSION['basket'][$item['Id']];
+        }
 ?>
     <b class='basket_item'>
-        <img src='<?=$item['link']?>' width='100px'>
+        <img src='<?=$item['Link']?>' width='100px'>
         &nbsp;&nbsp;
         <?=$item['Name']?>
         Цена:  <?=$item["Price"] * $item['Buy']?>

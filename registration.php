@@ -15,8 +15,16 @@
                 if (mysqli_num_rows($res) == 1)
                 {
                     $_SESSION['login'] = mysqli_fetch_row($res)[0];
+                    if($_SESSION['basket']){
+                        foreach ($_SESSION['basket'] as $itemid => $buy){
+                            mysqli_query ($link , "INSERT INTO basketitem  VALUES ('{$_SESSION['login']}', '$itemid', '$buy');");
+                        }
+                    }
+                    unset($_SESSION['basket']);
+                    header("Location: basket_page.php");
+                }else {
+                    header("Location: index.php");
                 }
-                header("Location: index.php");
             }
             else
                 $err = "Пользователь с таким логином существует";
