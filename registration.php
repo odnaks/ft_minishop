@@ -1,26 +1,22 @@
 <?
     include ("install.php");
-    if ($_GET['submit'] == "OK")
+    if ($_POST['submit'] == "OK")
     {
         $err = "";
-        if ($_GET['login'] != "" && $_GET['pass'] != "")
+        if ($_POST['login'] != "" && $_POST['password'] != "")
         {
-            $login = $_GET['login'];
-            $pass = $_GET['pass'];
-            $res = mysqli_query (  $link , "SELECT Pass FROM user WHERE Login LIKE '" . $login ."';"  );
+            $login = $_POST['login'];
+            $pass = hash('whirlpool', $_POST['pass']);
+            $res = mysqli_query (  $link , "SELECT login FROM user WHERE Login = '$login';"  );
             if (mysqli_num_rows($res) == 0)
             {
-                mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
-                // $pass_sql = mysqli_fetch_row( $res );
-                // if ($pass_sql[0] == $pass)
-                header("Location: index.php");
-                // else
-                //     $err = "Неверный пароль";
+                mysqli_query ($link , "INSERT INTO user (login, password) VALUES ('$login', '$pass');");
+
+                header("Location: log_in.php");
             }
             else
                 $err = "Пользователь с таким логином существует";
-            // mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
-            // $result  = mysqli_query ($link , "SELECT * FROM user;" );
+            echo $err;
         }
     }
 
@@ -31,16 +27,16 @@
 require('header.php');
 ?>
     <div class="body_log">
-            
+
             <h1>
             <?php
                 echo $err;
             ?>
             </h1>
             <center>
-            <form active="log_in.php" methon="GET">
+            <form action="registration.php" method="POST">
                 <b class="login">login: </b> <input type="text" name="login" value=""><br />
-                <b class="login">pass: </b> <input type="text" name="pass" value=""><br />
+                <b class="login">pass: </b> <input type="password" name="password" value=""><br />
                 <input type="submit" name="submit" value="OK"><br />
             </form>
             </center>

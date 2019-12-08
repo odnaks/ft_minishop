@@ -1,19 +1,20 @@
 <?
     include ("install.php");
-    if ($_GET['submit'] == "OK")
+
+    if ($_POST['submit'] == "OK")
     {
         $err = "";
-        if ($_GET['login'] != "" && $_GET['pass'] != "")
+        if ($_POST['login'] != "" && $_POST['password'] != "")
         {
-            $login = $_GET['login'];
-            $pass = $_GET['pass'];
-            $res = mysqli_query (  $link , "SELECT Pass FROM user WHERE Login LIKE '" . $login ."';"  );
+            $login = $_POST['login'];
+            $pass = $_POST['pass'];
+            $res = mysqli_query ($link , "SELECT password, id FROM user WHERE Login = '$login';");
             if (mysqli_num_rows($res) == 1)
             {
                 $pass_sql = mysqli_fetch_row( $res );
-                if ($pass_sql[0] == $pass)
+                if ($pass_sql[0] == hash('whirlpool', $pass))
                 {
-                    $_SESSION['login'] = $login;
+                    $_SESSION['login'] = $pass_sql[1];
                     header("Location: index.php");
                 }
                 else
@@ -21,9 +22,6 @@
             }
             else
                 $err = "Пользователя не существует";
-            // mysqli_query ($link , "INSERT INTO user VALUES ('" . $login ."', '" . $pass . "');" );
-            // $result  = mysqli_query ($link , "SELECT * FROM user;" );
-    
         }
     }
 
@@ -35,16 +33,16 @@ require('header.php');
 ?>
 
     <div class="body_log">
-            
+
             <h1>
             <?php
                 echo $err;
             ?>
             </h1>
             <center>
-            <form active="log_in.php" methon="GET">
+            <form action="log_in.php" method="POST">
                 <b class="login">login: </b><input class="text" type="text" name="login" value=""><br />
-                <b class="login">pass: </b><input type="text" name="pass" value=""><br />
+                <b class="login">pass: </b><input type="password" name="password" value=""><br />
                 <input type="submit" name="submit" value="OK"><br />
             </form>
             </center>
