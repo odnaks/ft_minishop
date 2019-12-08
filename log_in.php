@@ -15,6 +15,7 @@
                 if ($pass_sql[0] == hash('whirlpool', $pass))
                 {
                     $_SESSION['login'] = $pass_sql[1];
+                    $_SESSION['login_name'] = $login;
                     header("Location: index.php");
                 }
                 else

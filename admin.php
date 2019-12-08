@@ -75,10 +75,32 @@ if ($_POST['submititem'] == "ADD") {
 		if (mysqli_num_rows($res) != 0)
 			mysqli_query($link, "UPDATE User SET Password='".$pass."' WHERE Login='".$login."';");
 	}
-}
+} else if ($_POST['submitci'] == "ADD") {
+	if ($_POST['catitem'] != "" && $_POST['itemcat'] != "") {
+		$cat = $_POST['catitem'];
+		$item = $_POST['itemcat'];
+		$res = mysqli_query($link, "SELECT Name FROM ItemCat where ItemId LIKE '".$item."' AND CatId LIKE '" . $cat . "';");
+		if (mysqli_num_rows($res) == 0) {
+			mysqli_query($link, "INSERT INTO ItemCat VALUES ('". $item . "', '" . $cat . "');");
+		}
+	}
+} else if ($_POST['delci'] == "DELETE") {
+	if ($_POST['catitem'] != "" && $_POST['itemcat'] != "") {
+		$cat = $_POST['catitem'];
+		$item = $_POST['itemcat'];
+		$res = mysqli_query($link, "SELECT Name FROM ItemCat where ItemId LIKE '".$item."' AND CatId LIKE '" . $cat . "';");
+		if (mysqli_num_rows($res) == 1) {
+			mysqli_query($link, "DELETE FROM ItemCat WHERE ItemId = '".$item."' AND CatId = '" . $cat . "';");
+		}
+	}
+} 
 
 
+
+
+if ($_SESSION['login_name'] == "admin") {
 ?>
+
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -86,11 +108,18 @@ if ($_POST['submititem'] == "ADD") {
 </head>
 
 <?php
-// require('header.php');
+require('header.php');
 ?>
 	<body style="background-color: #000000">
-	<center>
+
+	
+
+	
 	<div class="body_log">
+
+	
+	<center>
+	<a href='admin_order.php'><h3>Orders</h3></a>
 	 <form action="admin.php" method="POST">
 	 <br>
 	 	Item: <br><br>
@@ -123,9 +152,53 @@ if ($_POST['submititem'] == "ADD") {
 		<input type="submit" name="deluser" value="DELETE"><br>
 	 </form>
 
+	 <br><br>
+	 <form action="admin.php" method="POST">
+	 <br>
+	 	Cat-Item: <br><br>
+ 		Category: 
+		<select name="catitem" value="">
+			<?php
+				$res = mysqli_query ($link , "SELECT * FROM Category;");
+				while ($item = mysqli_fetch_assoc($res))
+				{
+					print "<option value=" . $item['Id'] . ">" . $item['Name'] . "</option>";
+				}
+			?>
+		</select><br><br>
+		 
+		 
+		Item: 
+		<select name="itemcat" value="">
+			<?php
+				$res = mysqli_query ($link , "SELECT * FROM Item;");
+				while ($item = mysqli_fetch_assoc($res))
+				{
+					print "<option value=" . $item['Id'] . ">" .  $item['Name']   . "</option>";
+				}
+			?>
+		</select><br><br>
+
+		<input type="submit" name="submitci" value="ADD">
+		<input type="submit" name="delci" value="DELETE"><br>
+	 </form>
 	<br>
 	 </div>
 	 </center>
 
 	</body>
 </html>
+
+<?php 
+}
+else {
+
+?>
+
+<h1>You're not an admin. You're </h1>
+<h2>
+<?php
+print ($_SESSION['login_name']);
+}
+?>
+</h2>

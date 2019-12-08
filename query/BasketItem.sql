@@ -4,5 +4,6 @@ CREATE TABLE IF NOT EXISTS BasketItem (
     FOREIGN KEY (UserId)  REFERENCES User (Id),
     ItemId        INT,
     FOREIGN KEY (ItemId)  REFERENCES Item (Id),
-    Buy TINYINT DEFAULT (1)    
+    Buy TINYINT DEFAULT (1),
+    Bought TINYINT DEFAULT (0)
 );

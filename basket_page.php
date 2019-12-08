@@ -21,8 +21,6 @@ if($_SESSION['login']){
         header('Location: registration.php');
     }
 }
-
-
 ?>
 
 <html>

@@ -8,7 +8,7 @@
         $items = mysqli_query ( $link , "SELECT id, name, price, link FROM item" );
     }
 
-    while ($item = mysqli_fetch_assoc($items))
+    while (!item &&$item = mysqli_fetch_assoc($items))
     {
 ?>
 

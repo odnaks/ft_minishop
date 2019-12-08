@@ -54,6 +54,9 @@ if (mysqli_num_rows($res) == 0) {
 
     mysqli_query($link,"insert into ItemCat values (6, 3);");
     mysqli_query($link,"insert into ItemCat values (6, 5);");
+
+    $pass = hash('whirlpool', "123");
+    mysqli_query($link,"insert into User (Login, Password) values ('admin', '" . $pass . "');");
 }
         
 
