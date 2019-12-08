@@ -1,7 +1,24 @@
 <?php
 require('install.php');
-?>
 
+if(isset($_POST['id']))
+{
+    if($_SESSION['login']){
+        $id = $_POST['id'];
+        $loginid = $_SESSION['login'];
+        $buys = mysqli_query($link , "SELECT buy FROM basketitem WHERE userid='$loginid' AND itemid='$id';");
+        if(mysqli_num_rows($buys)){
+
+            mysqli_query ($link , "UPDATE basketitem SET buy = buy + 1 WHERE userid='$loginid' AND itemid='$id' AND buy < 100;" );
+        }else {
+            mysqli_query ($link , "INSERT INTO basketitem VALUES ('$loginid', '$id', 1);" );
+        }
+        echo "added to cart! ";
+    } else {
+        header('Location: log_in.php');
+    }
+}
+?>
 <html>
 <?php
 require('header.php');

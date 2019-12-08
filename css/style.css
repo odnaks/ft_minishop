@@ -45,17 +45,16 @@ body {
 
 
 .title {
-    position: absolute;
-    bottom: 30%;
-    left: 40%;
     font-size: 40px;
-    /* тут шрифт */
     font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .title a{
-    display: block;
-    margin:auto;
     text-decoration: none;
 }
 .title a:hover{
@@ -99,17 +98,34 @@ body {
     position: absolute;
     left:5%;
     top: 20%;
-    height: 1000px;
+    min-height: 1000px;
     background: #0b0630;
     color: white;
     width: 90%;
+}
+
+.basket_item{
+
+    margin-top:  5% ;
+    font-family: 'Press Start 2P', cursive;
+    color: #f8e3c4;
+    display: flex;
+    align-items: center;
+}
+
+.main_item {
+    margin-top:  5% ;
+    font-family: 'Press Start 2P', cursive;
+    color: #f8e3c4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .title_item {
     margin-top:  5% ;
     font-family: 'Press Start 2P', cursive;
     color: #f8e3c4;
-    display: block;
 }
 
 .title_item a:hover{

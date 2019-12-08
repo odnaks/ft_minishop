@@ -7,7 +7,7 @@
         if ($_POST['login'] != "" && $_POST['password'] != "")
         {
             $login = $_POST['login'];
-            $pass = $_POST['pass'];
+            $pass = $_POST['password'];
             $res = mysqli_query ($link , "SELECT password, id FROM user WHERE Login = '$login';");
             if (mysqli_num_rows($res) == 1)
             {
@@ -20,8 +20,10 @@
                 else
                     $err = "Неверный пароль";
             }
-            else
+            else{
                 $err = "Пользователя не существует";
+                $_POST['login'] = "";
+            }
         }
     }
 
@@ -41,7 +43,7 @@ require('header.php');
             </h1>
             <center>
             <form action="log_in.php" method="POST">
-                <b class="login">login: </b><input class="text" type="text" name="login" value=""><br />
+                <b class="login">login: </b><input class="text" type="text" name="login" value="<?=$_POST['login']?>"><br />
                 <b class="login">pass: </b><input type="password" name="password" value=""><br />
                 <input type="submit" name="submit" value="OK"><br />
             </form>

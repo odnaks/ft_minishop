@@ -6,13 +6,17 @@
         if ($_POST['login'] != "" && $_POST['password'] != "")
         {
             $login = $_POST['login'];
-            $pass = hash('whirlpool', $_POST['pass']);
+            $pass = hash('whirlpool', $_POST['password']);
             $res = mysqli_query (  $link , "SELECT login FROM user WHERE Login = '$login';"  );
             if (mysqli_num_rows($res) == 0)
             {
                 mysqli_query ($link , "INSERT INTO user (login, password) VALUES ('$login', '$pass');");
-
-                header("Location: log_in.php");
+                $res = mysqli_query ($link , "SELECT id FROM user WHERE login = '$login';");
+                if (mysqli_num_rows($res) == 1)
+                {
+                    $_SESSION['login'] = mysqli_fetch_row($res)[0];
+                }
+                header("Location: index.php");
             }
             else
                 $err = "Пользователь с таким логином существует";
