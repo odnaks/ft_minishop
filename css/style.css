@@ -188,3 +188,9 @@ input:focus{
     width: 40%;
     padding-bottom: 10px;
 }
+
+
+.order-btn{
+    margin: auto;
+    vertical-align: bottom;
+}

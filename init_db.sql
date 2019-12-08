@@ -38,3 +38,17 @@ CREATE TABLE IF NOT EXISTS BasketItem (
     FOREIGN KEY (ItemId)  REFERENCES Item (Id),
     Buy TINYINT DEFAULT (0)
 );
+
+CREATE TABLE IF NOT EXISTS Order (
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Name    VARCHAR(30),
+    Link    VARCHAR(130),
+    Price   INT
+);
+
+CREATE TABLE IF NOT EXISTS ItemCat (
+    ItemId    INT,
+    FOREIGN KEY (ItemId)  REFERENCES Item (Id),
+    CatId   INT,
+    FOREIGN KEY (CatId)  REFERENCES Category (Id)
+);

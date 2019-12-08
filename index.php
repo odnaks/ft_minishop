@@ -16,6 +16,13 @@ if(isset($_POST['id']))
         echo "added to cart! ";
     } else {
         header('Location: log_in.php');
+        /*if(!$_SESSION['basket'])
+            $_SESSION['basket'] = [];
+        $f = false;
+        foreach ($$_SESSION[basket] as $value) {
+            if($value)
+        }
+        $_SESSION['basket'[] = ['ItemId' => $_POST['id'], 'Buy' => 1];*/
     }
 }
 ?>
@@ -25,9 +32,9 @@ require('header.php');
 ?>
     <div class="body">
     <!-- <img src="https://github.com/foggliar/hello-world/blob/master/circle_1.png?raw=true"/>
-   <img src ="https://github.com/foggliar/hello-world/blob/master/circle_2.png?raw=true" width="300" height="300"/>
-   <img src ="https://github.com/foggliar/hello-world/blob/master/circle_3.png?raw=true" width="300" height="300"/> -->
-   <center>
+    <img src ="https://github.com/foggliar/hello-world/blob/master/circle_2.png?raw=true" width="300" height="300"/>
+    <img src ="https://github.com/foggliar/hello-world/blob/master/circle_3.png?raw=true" width="300" height="300"/> -->
+    <center>
     <?php
     require('items.php');
     ?>
