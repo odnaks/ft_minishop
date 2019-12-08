@@ -26,8 +26,8 @@ include ("install.php");
                 $item += $val;
             }
         }
-        echo "Price: $price   ";
-        echo "Items: $items";
+        // echo "Price: $price   ";
+        // echo "Items: $items";
         ?>
             <?=
                 ($_SESSION['login']) ?
